@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Subuthai's Very Simple Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/superslides.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="application/javascript" src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js" defer></script>
+  </head>
+
+  <body>
+    <div id="wrapper" style="position: absolute; left: 15%; top: 0;">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>ATMB Mobile API</h3>
+        </div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="#popup" onclick="showFormPopup()">Show Popup</a>
+          </li>
+          <li>
+            <a href="#popup" onclick="showProgressPopup()">Show Progress Popup</a>
+          </li>
+          <li>
+            <a href="#popup" onclick="hideProgressPopup()">Hide Progress Popup</a>
+          </li>
+          <li>
+            <a href="#alert" onclick="showConfirmationPopup(null,'Are you sure you want to permanently delete this mail?','Yes, delete permanently','No, cancel')">Show Confirmation Popup</a>
+          </li>
+          <li>
+            <a href="#progress" onclick="showInformationPopup('Image downloaded','assets/images/check.svg',0)">Show Information Popup</a>
+          </li>
+          <li>
+            <a href="#progress" onclick="showInformationPopup('Image downloaded',null,1500)">Show Information Popup 2</a>
+          </li>
+          <li>
+            <a href="#bottom-sheet" onclick="showBottomSheet()">Show Bottom Sheet</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="content">
+        <nav class="navbar navbar-expand-lg">
+          <button
+            type="button"
+            id="sidebarCollapse"
+            class="navbar-toggler"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+    <script src="js/countUp-jquery.js"></script>
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/controller.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,71 @@
+{
+    "data": {
+        "form": 
+        {
+            "title": "Mail Details",
+            "sections": [
+                {
+                    "fields":[
+                      {
+                            "title": "Mail Details",
+                            "type": 1
+                        },
+                        {
+                            "title": "Title",
+                            "placeHolder": "Add Value",
+                            "type": 1
+                        },
+                        {
+                            "title": "Mail ID",
+                            "value": "#9818237",
+                            "type": 2
+                        },
+                        {
+                            "title": "Status",
+                            "value": "Viewed",
+                            "type": 3
+                        },
+                        {
+                            "title": "Last Action Date",
+                            "value": "May 26, 2023",
+                            "type": 2
+                        },
+                        {
+                            "title": "Received Date",
+                            "value": "May 20, 2023",
+                            "type": 2
+                        },
+                        {
+                            "title": "Mail Type",
+                            "value": "Box",
+                            "type": 2
+                        }
+                    ]
+                },
+                {
+                    "fields":[
+                        { 
+                            "title": "",
+                            "type": 6
+                        },
+                        {
+                            "title": "Download as PDF",
+                            "iconName": "filePdf",
+                            "iconFont": "font_awesome",
+                            "type": 5
+                        },
+                        {
+                            "title": "Open & Scan",
+                            "iconName": "filePdf",
+                            "iconFont": "custom_icons",
+                            "type": 5
+                        }
+                    ]
+                }
+            ]
+        }
+        
+    },
+    "callId": 9001,
+    "function": "showBottomSheet"
+}
