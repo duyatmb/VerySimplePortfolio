@@ -246,97 +246,81 @@ async function showInformationPopup(message,icon,duration) {
     }   
 }  
 
-function showBottomSheet(title, message) {
-    console.log('Showing BottomSheet');
-    if (isFlutterInAppWebViewReady) {
-        console.log('Calling getBottomSheetData');
-        var json  = {
-            "data": {
-                "form": 
-                {
-                    "title": "Mail Details",
-                    "sections": [
-                        {
-                            "fields":[
-                              {
-                                    "name": "title",
-                                    "title": "Mail Details",
-                                    "textStyleMode":1,
-                                    "type": 1
-                                },
-                                {
-                                    "name": "titleField",
-                                    "title": "Title",
-                                    "placeHolder": "Add Value",
-                                    "textStyleMode":1,
-                                    "type": 1
-                                },
-                                {
-                                    "name": "mailIdField",
-                                    "title": "Mail ID",
-                                    "value": "#9818237",
-                                    "type": 2
-                                },
-                                {
-                                    "name": "statusField",
-                                    "title": "Status",
-                                    "value": "Viewed",
-                                    "type": 3
-                                },
-                                {
-                                    "name": "lastActionDateField",
-                                    "title": "Last Action Date",
-                                    "value": "May 26, 2023",
-                                    "type": 2
-                                },
-                                {
-                                    "name": "receivedDateField",
-                                    "title": "Received Date",
-                                    "value": "May 20, 2023",
-                                    "type": 2
-                                },
-                                {
-                                    "name": "mailTypeField",
-                                    "title": "Mail Type",
-                                    "value": "Box",
-                                    "type": 2
-                                }
-                            ]
-                        },
-                        {
-                            "fields":[
-                                { 
-                                    "name": "divider",
-                                    "title": "",
-                                    "textStyleMode":1,
-                                    "type": 1
-                                },
-                                {
+async function showBottomSheet(title, message) {
+    var json = {
+        "data": {
+            "form": {
+                "title": "Mail Details",
+                "sections": [
+                    {
+                        "fields": [
+                            {
+                                "name": "welcomeTitle",
+                                "textStyle": "smallLightBlack",
+                                "alignment": "start",
+                                "value": "MAIL DETAILS",
+                                "type": 1
+                            },
+                            {
+                                "name": "titleField",
+                                "title": "Title",
+                                "placeHolder": "Add Value",
+                                "textStyleMode":1,
+                                "type": 12
+                            },
+                            {
+                                "name": "mailIdField",
+                                "title": "Mail ID",
+                                "value": "#9818237",
+                                "type": 11
+                            },
+                            {
+                                "name": "statusField",
+                                "title": "Status",
+                                "value": "Viewed",
+                                "textColor":"#0D804A",
+                                "backgroundTextColor":"#ECFDF3",
+                                "type": 11
+                            },
+                            {
+                                "name": "lastActionDateField",
+                                "title": "Last Action Date",
+                                "value": "May 26, 2023",
+                                "type": 11
+                            },
+                            {
+                                "name": "receivedDateField",
+                                "title": "Mail ID",
+                                "value": "Received Date",
+                                "type": 11
+                            },
+                            {
+                                "name": "mailTypeField",
+                                "title": "Mail Type",
+                                "value": "Box",
+                                "type": 11
+                            }
+                        ]
+                    },
+                    {  
+                        "fields":[
+                            {
                                     "name": "downloadPdfButton",
                                     "title": "Download as PDF",
-                                    "iconName": "filePdf",
-                                    "iconFont": "font_awesome",
+                                    "imagePath": "filePdf",
                                     "textStyleMode":1,
-                                    "type": 1
-                                },
-                                {
-                                    "name": "openScanButton",
-                                    "title": "Open & Scan",
-                                    "iconName": "filePdf",
-                                    "iconFont": "custom_icons",
-                                    "textStyleMode":1,
-                                    "type": 1
-                                }
-                            ]
-                        }
-                    ]
-                }
-                
+                                    "type": 12
+                            }
+                        ]
+                    }
+                ]
             },
-            "callId": 9001,
-            "function": "showBottomSheet"
-        }
-        var jsonString = JSON.stringify(json);
-        port.postMessage(jsonString);
+            "duration": 0,
+            "dismissable": false
+        },
+        "dataType": "form",
+        "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+        "function": "showFormBottomSheet"
     }
+    return await callNativeWithResponse(json);
 }
