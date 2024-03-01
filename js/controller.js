@@ -246,7 +246,7 @@ async function showInformationPopup(message,icon,duration) {
     }   
 }  
 
-async function showBottomSheet(title, message) {
+async function showBottomSheet() {
     var json = {
         "data": {
             "form": {
@@ -305,11 +305,11 @@ async function showBottomSheet(title, message) {
                     {  
                         "fields":[
                             {
-                                    "name": "downloadPdfButton",
-                                    "title": "Download as PDF",
-                                    "imagePath": "filePdf",
-                                    "textStyleMode":1,
-                                    "type": 12
+                                "name": "downloadPdfButton",
+                                "title": "Download as PDF",
+                                "imagePath": "FontAwesome5.lock",
+                                "textStyleMode":1,
+                                "type": 13
                             }
                         ]
                     }
@@ -323,4 +323,34 @@ async function showBottomSheet(title, message) {
         "function": "showFormBottomSheet"
     }
     return await callNativeWithResponse(json);
+}
+
+async function showOverlayTopAndBottomBar(argbHexColor){
+    var json = {
+        "data": {
+            "argbHexColor": hexColor
+        },
+        "dataType": "color",
+        "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+        "function": "showOverlayTopAndBottomBar"
+    }
+}
+
+async function hideOverlayTopAndBottomBar(){
+    var json = {
+        "dataType": "none",
+        "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+        "function": "hideOverlayTopAndBottomBar"
+    }
+}
+
+async function changeTab(tabIndex){
+    var json = {
+        "data": {
+            "tabIndex": tabIndex
+        },
+        "dataType": "number",
+        "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+        "function": "changeTab"
+    }
 }
