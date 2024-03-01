@@ -265,7 +265,6 @@ async function showBottomSheet() {
                                 "name": "titleField",
                                 "title": "Title",
                                 "placeHolder": "Add Value",
-                                "textStyleMode":1,
                                 "type": 12
                             },
                             {
@@ -328,12 +327,13 @@ async function showBottomSheet() {
 async function showOverlayTopAndBottomBar(argbHexColor){
     var json = {
         "data": {
-            "argbHexColor": hexColor
+            "argbHexColor": argbHexColor
         },
         "dataType": "color",
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
         "function": "showOverlayTopAndBottomBar"
     }
+    return await callNativeWithResponse(json);
 }
 
 async function hideOverlayTopAndBottomBar(){
@@ -342,15 +342,77 @@ async function hideOverlayTopAndBottomBar(){
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
         "function": "hideOverlayTopAndBottomBar"
     }
+    return await callNativeWithResponse(json);
 }
 
 async function changeTab(tabIndex){
     var json = {
         "data": {
-            "tabIndex": tabIndex
+            "number": tabIndex
         },
-        "dataType": "number",
+        "dataType": "int",
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
         "function": "changeTab"
     }
+    return await callNativeWithResponse(json);
+}
+
+async function showMailboxSelectUI() {
+    var json = {
+        "data": {
+            "form": {
+                "title": "Select Mailbox",
+                "sections": [
+                    {
+                        "fields": [
+                            {
+                                "name": "title",
+                                "textStyle": "smallLightBlack",
+                                "alignment": "start",
+                                "value": "YOUR MAILBOXES",
+                                "type": 1
+                            },
+                            {
+                                "name": "mailbox17",
+                                "title": "Mailbox 17",
+                                "value": "123",
+                                "address": "Unit #26 Royal Tower\nScofield and Burrows Parcel\nDaly City, CA, 90124\nUnited States",
+                                "titleTextStyle":"smallLightBlack",
+                                "addressTextStyle":"smallLightBlack",
+                                "selected": true,
+                                "type": 21
+                            },
+                            {
+                                "name": "mailbox20",
+                                "title": "Mailbox 20",
+                                "value": "124",
+                                "address": "Unit #27B\nScofield and Burrows Parcel\nNew York, NY, 10001\nUnited States",
+                                "titleTextStyle":"smallLightBlack",
+                                "addressTextStyle":"smallLightBlack",
+                                "selected": false,
+                                "type": 21
+                            },
+                            {
+                                "name": "mailbox23",
+                                "title": "Mailbox 23",
+                                "value": "125",
+                                "address": "Unit #30\nScofield and Burrows Parcel\nLos Angeles, CA, 90001\nUnited States",
+                                "titleTextStyle":"smallLightBlack",
+                                "addressTextStyle":"smallLightBlack",
+                                "selected": false,
+                                "type": 21
+                            },
+                            
+                        ]
+                    }
+                ]
+            },
+            "duration": 0,
+            "dismissable": false
+        },
+        "dataType": "form",
+        "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
+        "function": "showFormBottomSheet"
+    }
+    return await callNativeWithResponse(json);
 }
