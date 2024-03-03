@@ -377,9 +377,10 @@ async function showMailboxSelectUI() {
                                 "title": "Mailbox 17",
                                 "value": "123",
                                 "address": "Unit #26 Royal Tower\nScofield and Burrows Parcel\nDaly City, CA, 90124\nUnited States",
-                                "titleTextStyle":"smallLightBlack",
-                                "addressTextStyle":"smallLightBlack",
-                                "selected": true,
+                                "titleTextStyle":"normalSemiBoldBlack",
+                                "addressTextStyle":"normalLightBlack",
+                                "isSelected": true,
+                                "action": "none",
                                 "type": 21
                             },
                             {
@@ -387,9 +388,10 @@ async function showMailboxSelectUI() {
                                 "title": "Mailbox 20",
                                 "value": "124",
                                 "address": "Unit #27B\nScofield and Burrows Parcel\nNew York, NY, 10001\nUnited States",
-                                "titleTextStyle":"smallLightBlack",
-                                "addressTextStyle":"smallLightBlack",
-                                "selected": false,
+                                "titleTextStyle":"normalSemiBoldBlack",
+                                "addressTextStyle":"normalLightBlack",
+                                "isSelected": false,
+                                "action": "returnField",
                                 "type": 21
                             },
                             {
@@ -397,9 +399,10 @@ async function showMailboxSelectUI() {
                                 "title": "Mailbox 23",
                                 "value": "125",
                                 "address": "Unit #30\nScofield and Burrows Parcel\nLos Angeles, CA, 90001\nUnited States",
-                                "titleTextStyle":"smallLightBlack",
-                                "addressTextStyle":"smallLightBlack",
-                                "selected": false,
+                                "titleTextStyle":"normalSemiBoldBlack",
+                                "addressTextStyle":"normalLightBlack",
+                                "isSelected": false,
+                                "action": "returnForm",
                                 "type": 21
                             },
                             
@@ -407,6 +410,7 @@ async function showMailboxSelectUI() {
                     }
                 ]
             },
+            "selectionMode": "single",
             "duration": 0,
             "dismissable": false
         },
