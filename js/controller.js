@@ -57,26 +57,26 @@ async function showFormPopup(){
                                     "isLocal": true,
                                     "width": 100,
                                     "height": 100,
-                                    "type": 4
+                                    "type": "FormImageData"
                                 },
                                 {
                                     "name": "welcomeTitle",
                                     "textStyle": "titleSemiBoldBlack",
                                     "alignment": "center",
                                     "value": "Welcome to Anytime Mailbox!",
-                                    "type": 1
+                                    "type": "FormFieldTextData"
                                 },
                                 {
                                     "name": "welcomeDescription",
                                     "alignment": "center",
                                     "value": "We are excited to introduce our updated and improved mobile app, designed with your needs in mind. We hope you enjoy the new look and experience!",
-                                    "type": 1
+                                    "type": "FormFieldTextData"
                                 },
                                 {
                                     "name": "welcomeDescription2",
                                     "alignment": "center",
                                     "value": "Let’s take a tour of your dashboard.",
-                                    "type": 1
+                                    "type": "FormFieldTextData"
                                 },
                                 {
                                     "name": "positiveAction",
@@ -85,7 +85,7 @@ async function showFormPopup(){
                                     "textStyleMode": 0,
                                     "action": "returnField",
                                     "value": "",
-                                    "type": 5
+                                    "type": "FormActionButtonData"
                                 },
                                 {
                                     "name": "negativeAction",
@@ -94,7 +94,7 @@ async function showFormPopup(){
                                     "textStyleMode": 0,
                                     "action": "returnField",
                                     "value": "",
-                                    "type": 5
+                                    "type": "FormActionButtonData"
                                 }
                             ]
                         }
@@ -158,7 +158,7 @@ async function showConfirmationPopup(title, description, positiveMessage, negati
             "textStyle": "titleSemiBoldBlack",
             "alignment": "center",
             "value": title,
-            "type": 1
+            "type": "FormFieldTextData"
         });
     }
     if (description && description.trim() !== "") {
@@ -166,7 +166,7 @@ async function showConfirmationPopup(title, description, positiveMessage, negati
           "name": "description",
           "alignment": "center",
           "value": description,
-          "type": 1
+          "type": "FormFieldTextData"
         });
     }
     if (positiveMessage && positiveMessage.trim() !== "") {
@@ -177,7 +177,7 @@ async function showConfirmationPopup(title, description, positiveMessage, negati
           "textStyleMode": 0,
           "action": "returnField",
           "value": "",
-          "type": 5
+          "type": "FormActionButtonData"
         });
     }
     if (negativeMessage && negativeMessage.trim() !== "") {
@@ -188,7 +188,7 @@ async function showConfirmationPopup(title, description, positiveMessage, negati
           "textStyleMode": 0,
           "action": "returnField",
           "value": "",
-          "type": 5
+          "type": "FormActionButtonData"
         });
     }
     var jsonResponse = await callNativeWithResponse(json);
@@ -227,7 +227,7 @@ async function showInformationPopup(message,icon,duration) {
             "isLocal": true,
             "width": 40,
             "height": 40,
-            "type": 4
+            "type": "FormImageData"
         });
     }
     if (message && message.trim() !== "") {
@@ -235,7 +235,7 @@ async function showInformationPopup(message,icon,duration) {
           "name": "message",
           "alignment": "center",
           "value": message,
-          "type": 1
+          "type": "FormFieldTextData"
         });
     }
     var jsonResponse = await callNativeWithResponse(json);
@@ -259,19 +259,19 @@ async function showBottomSheet() {
                                 "textStyle": "smallLightBlack",
                                 "alignment": "start",
                                 "value": "MAIL DETAILS",
-                                "type": 1
+                                "type": "FormFieldTextData"
                             },
                             {
                                 "name": "titleField",
                                 "title": "Title",
                                 "placeHolder": "Add Value",
-                                "type": 12
+                                "type": "FormCellInputData"
                             },
                             {
                                 "name": "mailIdField",
                                 "title": "Mail ID",
                                 "value": "#9818237",
-                                "type": 11
+                                "type": "FormCellInfoData"
                             },
                             {
                                 "name": "statusField",
@@ -279,25 +279,25 @@ async function showBottomSheet() {
                                 "value": "Viewed",
                                 "textColor":"#0D804A",
                                 "backgroundTextColor":"#ECFDF3",
-                                "type": 11
+                                "type": "FormCellInfoData"
                             },
                             {
                                 "name": "lastActionDateField",
                                 "title": "Last Action Date",
                                 "value": "May 26, 2023",
-                                "type": 11
+                                "type": "FormCellInfoData"
                             },
                             {
                                 "name": "receivedDateField",
                                 "title": "Mail ID",
                                 "value": "Received Date",
-                                "type": 11
+                                "type": "FormCellInfoData"
                             },
                             {
                                 "name": "mailTypeField",
                                 "title": "Mail Type",
                                 "value": "Box",
-                                "type": 11
+                                "type": "FormCellInfoData"
                             }
                         ]
                     },
@@ -307,8 +307,7 @@ async function showBottomSheet() {
                                 "name": "downloadPdfButton",
                                 "title": "Download as PDF",
                                 "imagePath": "FontAwesome5.lock",
-                                "textStyleMode":1,
-                                "type": 13
+                                "type": "FormCellButtonData"
                             }
                         ]
                     }
@@ -370,7 +369,7 @@ async function showMailboxSelectUI() {
                                 "textStyle": "smallLightBlack",
                                 "alignment": "start",
                                 "value": "YOUR MAILBOXES",
-                                "type": 1
+                                "type": "FormFieldTextData"
                             },
                             {
                                 "name": "mailbox17",
@@ -381,7 +380,7 @@ async function showMailboxSelectUI() {
                                 "addressTextStyle":"normalLightBlack",
                                 "isSelected": true,
                                 "action": "none",
-                                "type": 21
+                                "type": "FormSelectMailboxData"
                             },
                             {
                                 "name": "mailbox20",
@@ -391,8 +390,8 @@ async function showMailboxSelectUI() {
                                 "titleTextStyle":"normalSemiBoldBlack",
                                 "addressTextStyle":"normalLightBlack",
                                 "isSelected": false,
-                                "action": "returnField",
-                                "type": 21
+                                "action": "none",
+                                "type": "FormSelectMailboxData"
                             },
                             {
                                 "name": "mailbox23",
@@ -402,15 +401,15 @@ async function showMailboxSelectUI() {
                                 "titleTextStyle":"normalSemiBoldBlack",
                                 "addressTextStyle":"normalLightBlack",
                                 "isSelected": false,
-                                "action": "returnForm",
-                                "type": 21
+                                "action": "none",
+                                "type": "FormSelectMailboxData"
                             },
                             
                         ]
                     }
                 ]
             },
-            "selectionMode": "single",
+            "selectionMode": "multiple",
             "duration": 0,
             "dismissable": false
         },
