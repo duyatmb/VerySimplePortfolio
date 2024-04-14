@@ -46,6 +46,8 @@ async function showFormPopup(){
     var json = {
             "data": {
                 "form": {
+                    "duration": 0,
+                    "dismissable": false,
                     "title": "Welcome",
                     "sections": [
                         {
@@ -100,8 +102,6 @@ async function showFormPopup(){
                         }
                     ]
                 },
-                "duration": 0,
-                "dismissable": false
             },
             "dataType": "form",
             "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
@@ -203,6 +203,8 @@ async function showInformationPopup(message,icon,duration) {
     var json = {
         "data": {
             "form": {
+                "duration": duration,
+                "dismissable": true,
                 "title": "Information",
                 "sections": [
                     {
@@ -212,8 +214,6 @@ async function showInformationPopup(message,icon,duration) {
                     }
                 ],
             },
-            "duration": duration,
-            "dismissable": true,
         },
         "dataType": "form",
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
@@ -250,6 +250,8 @@ async function showBottomSheet() {
     var json = {
         "data": {
             "form": {
+                "duration": 0,
+                "dismissable": false,
                 "title": "Mail Details",
                 "sections": [
                     {
@@ -313,8 +315,6 @@ async function showBottomSheet() {
                     }
                 ]
             },
-            "duration": 0,
-            "dismissable": false
         },
         "dataType": "form",
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
@@ -360,6 +360,9 @@ async function showMailboxSelectUI() {
     var json = {
         "data": {
             "form": {
+                "selectionMode": "multiple",
+                "duration": 0,
+                "dismissable": false,
                 "title": "Select Mailbox",
                 "sections": [
                     {
@@ -409,9 +412,6 @@ async function showMailboxSelectUI() {
                     }
                 ]
             },
-            "selectionMode": "multiple",
-            "duration": 0,
-            "dismissable": false
         },
         "dataType": "form",
         "callId": Math.floor(Math.random() * Number.MAX_SAFE_INTEGER),
