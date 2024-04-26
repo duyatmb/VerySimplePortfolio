@@ -255,6 +255,7 @@ async function showBottomSheet() {
                 "title": "Mail Details",
                 "sections": [
                     {
+                        "itemSpacing": 4.0,
                         "fields": [
                             {
                                 "name": "welcomeTitle",
@@ -308,7 +309,7 @@ async function showBottomSheet() {
                             {
                                 "name": "downloadPdfButton",
                                 "title": "Download as PDF",
-                                "imagePath": "FontAwesome5.lock",
+                                "imagePath": "assets/images/pdf_file.svg",
                                 "type": "FormCellButtonData"
                             }
                         ]
